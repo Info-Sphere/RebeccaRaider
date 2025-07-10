@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
+
+/* CSS Variables for easy color customization (Light Theme Defaults) */
+:root {
+    --primary-color: #1871c5; /* Gold color for the hover effect */
+    --navbar-bg-color: rgba(0, 0, 0, 0.1); /* Background color of navbar */
+    --navbar-link-color: #161515; /* Default color for navbar links */
+    --hover-color: rgba(168, 154, 29, 1); /* Hover color */
+
+    /* New Theme Variables - Light Mode */
+    --bg-color: #f0f0f0; /* Light background */
+    --text-color: #333333; /* Dark text */
+    --header-bg: rgba(255, 255, 255, 0.1); /* Light header background */
+    --header-backdrop-filter: blur(50px);
+    --theme-toggle-icon-color: #161515; /* Dark icon for light mode */
+    --theme-toggle-hover-bg: rgba(0, 0, 0, 0.05);
+    --menu-icon-color: #161515;
+
+    /* Specific to Relatos Cortos page */
+    --book-page-bg: rgba(255, 255, 255, 0.8); /* Light background for the content card */
+    --book-page-text: #333333; /* Dark text for the content card */
+    --list-item-bg: rgba(255, 255, 255, 0.9); /* Background for list items */
+    --list-item-hover-bg: rgba(240, 240, 240, 0.95);
+    --list-item-border: #cccccc;
+    --list-item-link-color: #161515;
+    --list-item-clicked-color: #008000; /* Green for clicked links */
+    --list-item-clicked-icon-color: #008000; /* Green checkmark */
+
+
+    /* Smooth transitions for theme changes */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Dark Theme Variables - Applied when body has 'dark' class */
+body.dark {
+    --bg-color: #1a1a2e; /* Dark blue background */
+    --text-color: #e0e0e0; /* Light text */
+    --header-bg: rgba(26, 26, 46, 0.5); /* Darker header background */
+    --header-backdrop-filter: blur(15px);
+    --navbar-link-color: #ffffff; /* White for dark mode */
+    --hover-color: #ffffff; /* White on hover for better contrast */
+    --theme-toggle-icon-color: #f0f0f0; /* Light icon for dark mode */
+    --theme-toggle-hover-bg: rgba(255, 255, 255, 0.1);
+    --menu-icon-color: #f0f0f0;
+
+    /* Specific to Relatos Cortos page - Dark Mode */
+    --book-page-bg: rgba(0, 0, 0, 0.6); /* Darker background for the content card */
+    --book-page-text: #e0e0e0; /* Light text for the content card */
+    --list-item-bg: rgba(30, 30, 50, 0.9); /* Darker background for list items */
+    --list-item-hover-bg: rgba(40, 40, 60, 0.95);
+    --list-item-border: #444444;
+    --list-item-link-color: #ffffff;
+    --list-item-clicked-color: #90EE90; /* Lighter green for dark mode */
+    --list-item-clicked-icon-color: #90EE90; /* Lighter green checkmark */
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Birthstone", sans-serif; /* Global font */
+}
+
+/* Apply theme colors to html and body */
+html, body {
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: var(--bg-color); /* Apply theme background */
+    color: var(--text-color); /* Apply theme text color */
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack header and main content */
+}
+
+/* --- Header Styling (Replicated from Landing Page) --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--header-bg); /* Apply theme header background */
+    backdrop-filter: var(--header-backdrop-filter); /* Apply theme backdrop filter */
+    z-index: -1;
+    transition: background 0.5s ease, backdrop-filter 0.5s ease;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+/* --- Navbar and Theme Toggle Button Layout (Desktop First) --- */
+.navbar {
+    display: flex; /* Ensure navbar is a flex container for horizontal layout */
+    align-items: center; /* Vertically align items in the middle */
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+    gap: 1.5rem; /* Space between navigation items */
+}
+
+.navbar a {
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-size: 1rem;
+    color: var(--navbar-link-color); /* Apply theme link color */
+    text-decoration: none;
+    font-weight: 500;
+    position: relative; /* Needed for the ::after pseudo-element positioning */
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Keep this to allow vertical transforms */
+}
+
+.navbar a:hover {
+    color: var(--hover-color); /* Apply theme hover color */
+    transform: translateY(-10px);
+}
+
+/* Underline Effect */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Menu Icon (for mobile - hidden on desktop) */
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: var(--menu-icon-color); /* Apply theme menu icon color */
+    cursor: pointer;
+    display: none; /* Hidden by default on desktop */
+    transition: all 0.3s ease, color 0.5s ease; /* Smooth transition for hover effect and theme change */
+}
+
+.icons:hover {
+    transform: scale(1.2); /* Scale up the icon on hover */
+    color: var(--primary-color); /* Change color of the icon */
+}
+
+#check {
+    display: none; /* Hides the checkbox input */
+}
+
+/* Styles for the theme toggle button itself */
+.theme-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px; /* Fixed width for the button */
+    height: 40px; /* Fixed height for the button */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Vertically center icon */
+    justify-content: center; /* Horizontally center icon */
+    padding: 0; /* Remove default padding to allow exact sizing */
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--theme-toggle-icon-color); /* Apply theme icon color */
+    flex-shrink: 0; /* Prevent the button from shrinking */
+    margin-left: auto; /* Push to the far right on desktop */
+}
+
+.theme-toggle-button:hover {
+    background-color: var(--theme-toggle-hover-bg); /* Apply theme hover background */
+}
+
+/* Styling for Emoji theme icons */
+.theme-emoji {
+    font-size: 1.8rem; /* Adjust size as needed */
+    line-height: 1; /* Helps with vertical alignment */
+    transition: transform 0.3s ease; /* Add a little transition for fun */
+}
+
+.theme-toggle-button:hover .theme-emoji {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Crucial: Ensure the .hidden class correctly hides elements */
+.hidden {
+    display: none !important;
+}
+
+/* --- Main Content Area Styling --- */
+.content-area {
+    flex-grow: 1; /* Allows content area to take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px 20px; /* Adjust padding to account for fixed header */
+    min-height: calc(100vh - 80px); /* Ensure it takes full height minus header */
+}
+
+/* --- Book Page Styling --- */
+.book-page {
+    background-color: var(--book-page-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto; /* Center the book page and add vertical margin */
+    color: var(--book-page-text);
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.book-page h2 {
+    font-family: "Dancing Script", cursive; /* Use a different font for the title */
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: var(--book-page-text);
+    transition: color 0.5s ease;
+}
+
+/* --- Interactive List Styling --- */
+.interactive-list {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+}
+
+.interactive-list li {
+    background-color: var(--list-item-bg);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--list-item-border);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* For positioning the checkmark */
+    overflow: hidden; /* Ensure checkmark doesn't overflow */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interactive-list li:hover {
+    background-color: var(--list-item-hover-bg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.interactive-list li a {
+    display: block; /* Make the whole list item clickable */
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--list-item-link-color);
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-align: left; /* Align text to the left */
+    padding-right: 50px; /* Space for the checkmark */
+}
+
+/* --- Visited Link (Clicked) State --- */
+.interactive-list li.clicked {
+    background-color: rgba(144, 238, 144, 0.2); /* Light green background */
+    border-color: var(--list-item-clicked-color);
+}
+
+.interactive-list li.clicked a {
+    color: var(--list-item-clicked-color); /* Green text for clicked links */
+    font-style: italic; /* Optional: make text italic */
+}
+
+/* Checkmark icon for clicked items */
+.interactive-list li.clicked::after {
+    content: '✓'; /* Checkmark character */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+    color: var(--list-item-clicked-icon-color);
+    transition: all 0.3s ease;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%; /* Adjust header padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex; /* Show menu icon on mobile */
+    }
+
+    /* Toggle visibility of menu/close icons */
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        max-height: 0; /* Initial state: collapsed */
+        background: var(--navbar-bg-color);
+        backdrop-filter: var(--header-backdrop-filter); /* Use theme backdrop filter */
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Hide overflow until expanded */
+        transition: max-height 0.3s ease-in-out, background 0.5s ease, backdrop-filter 0.5s ease; /* Smooth transition for expansion and theme change */
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center items horizontally within the menu */
+        gap: 0; /* Reset gap for stacked items */
+        padding: 0; /* Reset padding initially, add when expanded */
+    }
+
+    #check:checked~.navbar {
+        max-height: 500px; /* Expand to a max height that fits most mobile screens */
+        padding: 1rem 0; /* Add padding when expanded */
+        overflow-y: auto; /* Allow scrolling if content exceeds max-height */
+    }
+
+    .navbar a {
+        display: block; /* Make links block level to stack */
+        font-size: 1.1rem;
+        margin: 0.75rem 0; /* Adjusted vertical margin for stacked links */
+        text-align: center;
+        transform: translateY(-50px); /* Start off-screen for animation */
+        opacity: 0; /* Hidden initially for animation */
+        transition: transform 0.3s ease, opacity 0.3s ease, color 0.5s ease; /* Smooth animation and theme change */
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0); /* Animate into place */
+        opacity: 1; /* Fade in */
+        transition-delay: calc(0.05s * var(--i)); /* Staggered animation for links */
+    }
+
+    /* Ensure theme toggle button is visible and formatted within mobile menu */
+    .navbar .theme-toggle-button {
+        display: flex; /* Make it visible and keep its flex properties */
+        margin: 0.75rem auto; /* Center horizontally with auto margins, adjusted vertical margin */
+        align-self: center; /* Explicitly center it within the column flex container */
+        order: 99; /* Ensure it appears at the end of the mobile menu */
+    }
+
+    .book-page {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .book-page h2 {
+        font-size: 2.5em;
+    }
+
+    .interactive-list li a {
+        font-size: 1.1em;
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-page h2 {
+        font-size: 2em;
+    }
+
+    .interactive-list li a {
+        font-size: 1em;
+        padding: 10px 12px;
+    }
+
+    .interactive-list li.clicked::after {
+        font-size: 1.5em;
+        right: 10px;
+    }
+}

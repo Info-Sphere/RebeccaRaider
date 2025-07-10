@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "birthstone", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+h1{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(252, 249, 253);
+    font-size: 45px;
+    cursor: pointer;
+}

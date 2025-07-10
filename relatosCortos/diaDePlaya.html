@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PPDM0VRQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0PPDM0VRQJ');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Día de Playa 🌞</title>
+    <link rel="stylesheet" href="../styles/losRelatosCortos.css" />
+    <style>
+        /* Toggle button styles */
+        #themeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1000;
+            color: #6d6d6d;
+            transition: color 0.3s ease;
+        }
+        #themeToggle:hover {
+            color: #2c2c2c;
+        }
+        /* Hide icons by default */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle Button -->
+    <button id="themeToggle" aria-label="Toggle dark mode">
+        <span id="sunIcon" class="hidden">🌜</span>
+        <span id="moonIcon">🌞</span>
+    </button>
+
+    <div class="mainContainer">
+        <div class="titulo">
+            <h1>Día de Playa</h1>
+            <h2>Escrito por Rebecca Raider</h2>
+        </div>
+
+        <div class="book-container"><br />
+          <p>Hoy mis padres me llevan a mis primeras vacaciones, estoy tan feliz que me he levantado antes que todos y los he ayudado a preparase.</p>
+          <p>Hemos salido muy temprano de casa, voy en el coche pensando en todo lo que haré en la playa mientras canto una bonita canción.</p>
+          <p>Mi mamá me ha comprado muchos juguetes para jugar con la arena y el agua, me muero por estrenarlos.</p>
+          <p>Después de un rato al fin el coche se detiene, ¡sí, al fin! Pero no veo el mar, ¿qué pasa?</p>
+          <p>Mis padres me dicen que hemos hecho una parada para comer algo y repostar. ¡No lo puedo creer!</p>
+          <p>Yo no quiero perder el tiempo, solo quiero llegar a la playa y conocer al fin el mar. Por favor papi vamos ya, por favor mami vamos a la playa.</p>
+          <p>Después de un largo rato mis padres por fin vuelven al coche. Ahora tengo sueño, pero no me quiero dormir, estoy tan ansiosa, tengo tantas ganas de llegar a jugar a la playa y de ver el mar por primera vez.</p>
+          <p>Voy viendo a través de las ventanillas y no encuentro el mar. Veo árboles grandes y pequeños, algunas casas, aves volando en lo alto y personas caminando. Pero no veo el mar.</p>
+          <p>Después de mucho tiempo por fin vislumbro un horizonte azul. Mi madre me dice que estamos cerca, y mi ansiedad aumenta.</p>
+          <p>El coche se detiene y mis padres bajan conmigo a la playa. Mami por favor tráeme mis juguetes, estoy tan feliz.</p>
+          <p>Mi mamá ha tendido una gran toalla en la playa y ha plantado una colorida sombrilla.</p>
+          <p>Mi papá y yo hemos construido un bonito castillo, luego hemos ido a buscar conchas y piedritas para decorarlo, también nos hemos bañado en el agua salada y jugueteado con las olas del mar.</p>
+          <p>Mi madre ha preparado unos bocadillos, esta comida sí que está deliciosa. ¡Ha sido un día maravilloso!</p>
+          <p>Ha llegado la hora de irnos, estoy agotada pero no quiero irme, mi mamá me abraza y me dice que pronto volveremos, que nos queda mucho por explorar, me besa en la frente y me toma de la mano llevándome de vuelta en el coche.</p>
+          <p>Estoy muy cansada, cierro los ojos un momento, cuando me despierto, el coche se ha detenido frente a una bonita y colorida casita, mi mamá dice que hemos llegado.</p>
+          <p>Mi padre me lleva en brazos y me acuesta en una cómoda cama.</p>
+          <p>Estos días, estarán llenos de aventuras, al fin duermo feliz porque hoy mis sueños se hicieron realidad.</p>
+      </div>
+  </div>
+
+    <script>
+    // --- Dark Mode Toggle ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            document.body.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+        localStorage.setItem('theme', theme);
+    }
+
+    // On page load, check saved theme
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    setTheme(currentTheme);
+
+    // Toggle on button click
+    themeToggleBtn.addEventListener('click', () => {
+        const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+    </script>
+</body>
+</html>

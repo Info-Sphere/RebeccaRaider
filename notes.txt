@@ -1,0 +1,40 @@
+first background
+    background-image: url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGNyZWF0aXZlfGVufDB8fDB8fHww");
+Must work title and media queries also adjustment requested by rebecca.
+
+
+breakpoints:
+common: 480px, 768px, 1024px, 1200px
+very small screens: 320px, 375px
+
+______________________________________________________________________________________________________
+index.html
+______________________________________________________________________________________________________
+
+
+->next steps media queries for index.html
+issues
+herocard not always centered
+must work also in landscape is not centered now
+
+______________________________________________________________________________________________________
+
+Mis relatos Cortos HTML 
+______________________________________________________________________________________________________
+
+______________________________________________________________________________________________________
+-> Problem with last link clicked not showing... not resolved           solved
+last updated files
+relatosCorts.css        April/13
+Index.html              April/13
+relatosCortos.js        April/13
+______________________________________________________________________________________________________
+
+dark mode for reading pages
+differenciate dark and light modes
+relatos cortos page
+        link marks
+        theme function
+        
+check stories
+        

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PPDM0VRQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0PPDM0VRQJ');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuando te conocí</title>
+    <link rel="stylesheet" href="../styles/losRelatosCortos.css" />
+
+    <style>
+      .toggle-theme-button {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: #6d6d6d;
+        transition: color 0.3s ease;
+        z-index: 1000;
+      }
+      .toggle-theme-button:hover {
+        color: #2c2c2c;
+      }
+      body.dark-mode {
+        background-color: #121212 !important;
+        color: #ddd !important;
+      }
+      body.dark-mode .book-container {
+        background-color: #1e1e1e !important;
+        border-color: #333 !important;
+        box-shadow: 0 4px 8px rgba(255 255 255 / 0.1);
+      }
+      body.dark-mode h1,
+      body.dark-mode h2,
+      body.dark-mode p {
+        color: #ddd !important;
+      }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-theme-button" aria-label="Toggle dark mode" title="Toggle dark mode">🌞</button>
+
+    <div class="mainContainer">
+        <div class="titulo">
+            <h1>Cuando te conocí</h1>
+            <h2>Escrito por Rebecca Raider</h2>
+        </div>
+
+        <div class="book-container"><br>
+     <!--<h1>New York</h1>
+            <h2>Escrito por Rebecca Raider</h2>-->
+
+            <p>Por sus amplias calles transitan miles de personas tanto de día como de noche, por eso algunos la llaman la ciudad que nunca duerme.</p>
+
+            <p>Muchas de estas personas caminan rápido, pensando en sus negocios, en sus trabajos o simplemente en las vicisitudes de sus vidas. Así que no se percatan de la magia que emana de los más inesperados rincones.</p>
+
+            <p>Pero existen seres humanos capaces de ver más allá. Yo soy una de ellas.</p>
+
+            <p>Vivimos entre la realidad y la fantasía, esto nos permite sentir esa magia y tener recuerdos vívidos de los mil y un sucesos que han tenido lugar en esta ciudad y que han podido salir de la mente de su creador y ser plasmados en celuloide.</p>
+
+            <p>Camino por estas calles, disfrutando de cada momento y tratando de no pasar por alto ningún detalle.</p>
+
+            <p>Lo primero que me llama la atención es un pequeño ratón blanco que va pulcramente vestido, se dispone a conducir un coche convertible rojo de juguete, que va conjunto con su jersey. Se despide de su familia con una especie de estribillo.</p>
+
+            <p>Luego una presencia muy diferente se adueña de la calle, un coche Lincoln Continental negro. La parsimonia con la que se mueve me deja claro este coche es un reflejo de la persona que va sentada en el asiento trasero. Un personaje poderoso y con pocos escrúpulos.</p>
+
+            <p>Apresuro mi paso y doblo en la esquina donde un chico repartidor de pizza casi me atropella con su bicicleta, supongo que no ha tenido un buen día, porque una voz desde la pizzería le grita ¡Es tu última oportunidad Peter!</p>
+
+            <p>Decido tomar el metro, al subir, mi piel se crispa al reconocer a dos espectros discutiendo.</p>
+
+            <p>Uno de ellos es espeluznante y también es más agresivo, el otro parece haber muerto recientemente y no comprende bien cómo funciona el inframundo.</p>
+
+            <p>No quiero que noten que soy capaz de verlos, así que me escondo detrás de un libro.</p>
+
+            <p>Cuando estoy a punto de bajarme, no puedo evitar sentir lástima por ellos. Atrapados en un mundo que ya no es el suyo.</p>
+
+            <p>Ahora camino por Central Park, y casi puedo respirar la magia y el amor.</p>
+
+            <p>Escucho una pegajosa canción y me decido a seguirla. Descubro que es una hermosa chica la que canta.</p>
+
+            <p>Su canto es hipnótico, tanto las personas del parque como los animales seguimos su son.</p>
+
+            <p>La chica es tan dulce, y lleva un vestido hermoso, pero me recuerda las cortinas del salón de mi madre.</p>
+
+            <p>Hay tanto que ver y disfrutar aquí.</p>
+
+            <p>Entre una y otra visión, pierdo la noción del tiempo.</p>
+
+            <p>Llevo un rato charlando con un elfo, cuando caigo en cuenta de lo cansada que estoy y que ya es hora de volver a mi hotel.</p>
+
+            <p>Cuando voy caminando de regreso escucho una gran algarabía. De pronto entre los enormes rascacielos aparece caminando la Estatua de la Libertad, va a cumplir con una importante misión: Unir a los neoyorquinos, inspirándoles buenos sentimientos, para así poder ganarle la batalla al mal.</p>
+
+            <p>Antes de irme a la cama echo un vistazo por la ventana, para deleitar mi vista con esta hermosa ciudad y a lo lejos logro ver la punta del famoso Empire State, de la cual cuelga un enorme gorila que en una mano lleva una chica rubia.</p>
+
+            <p>Hoy ha sido un día extenuante y no sé cuántas aventuras me esperan los días que me quedan aquí, pero estoy deseando vivirlos.</p>
+        </div>
+    </div>
+    <!--<div class="page-number">
+        <span class="page">Página <span class="page-num"></span></span>
+    </div>-->
+
+    <script>
+      const toggleButton = document.querySelector('.toggle-theme-button');
+
+      // Function to update the icon
+      function updateIcon(isDark) {
+        toggleButton.textContent = isDark ? '🌜' : '🌞';
+      }
+
+      // Load saved preference
+      window.addEventListener('DOMContentLoaded', () => {
+        const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+        if (darkModeEnabled) {
+          document.body.classList.add('dark-mode');
+        }
+        updateIcon(darkModeEnabled);
+      });
+
+      // Toggle dark mode on button click
+      toggleButton.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        updateIcon(isDark);
+      });
+    </script>
+</body>
+</html>

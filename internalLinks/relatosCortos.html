@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) - Keeping it for consistency across pages -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PPDM0VRQJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0PPDM0VRQJ');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A collection of short stories by Rebecca Raider.">
+    <title>✏️ Relatos Cortos</title>
+    <!-- Link to the new CSS file for this page -->
+    <link rel="stylesheet" href="/styles/relatosCortos.css">
+    <!-- Boxicons for menu icon -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header replicated from the landing page for consistent navigation and theme toggle -->
+    <header class="header">
+        <input type="checkbox" id="check">
+        <label for="check" class="icons" aria-label="Toggle Navigation" aria-controls="navbar" aria-expanded="false">
+            <i class="bx bx-food-menu bx-tada" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <!-- Updated --i values for consistent animation staggering -->
+            <a href="/index.html" style="--i:0;">Inicio</a>
+            <a href="/internalLinks/relatoscortos.html" style="--i:1;">Relatos Cortos</a>
+            <a href="/internalLinks/recomendaciones.html" style="--i:2;">Recomendaciones</a>
+            <a href="/internalLinks/espacioLibre.html" style="--i:3;">Espacio Libre</a>
+            <a href="/internalLinks/biografia.html" style="--i:4;">Biografia</a>
+            <a href="/internalLinks/Contactame.html" style="--i:5;">Contactame</a>
+            <!-- Dark Mode Toggle Button with Emoji icons - Adjusted for better UX -->
+            <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                <!-- Sun Emoji (visible in light mode, user clicks to switch to dark) -->
+                <span id="sunIcon" class="theme-emoji">🌜</span>
+                <!-- Moon Emoji (visible in dark mode, user clicks to switch to light) -->
+                <span id="moonIcon" class="theme-emoji hidden">🌞</span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="content-area">
+        <div class="book-page">
+            <h2>Mis Relatos Cortos</h2>
+            <ul class="interactive-list">
+                <li><a href="/relatosCortos/cuandoTeConoci.html" tabindex="0" aria-label="Cuando te conocí short story">Cuando te conocí</a></li>
+                <li><a href="/relatosCortos/diaDePlaya.html" tabindex="0" aria-label="Dia de playa short story">Dia de playa</a></li>
+                <li><a href="/relatosCortos/miVidaEnDosMaletas.html" tabindex="0" aria-label="Mi vida en dos maletas short story">Mi vida en dos maletas</a></li>
+                <li><a href="/relatosCortos/diarioDeUnHombreEnamorado.html" tabindex="0" aria-label="Diario de un hombre enamorado short story">Diario de un hombre enamorado</a></li>
+                <li><a href="/relatosCortos/newYork.html" tabindex="0" aria-label="New York short story">New York</a></li>
+                <li><a href="/relatosCortos/Macedonia.html" tabindex="0" aria-label="Macedonia short story">Macedonia</a></li>
+                <li><a href="/relatosCortos/boira.html" tabindex="0" aria-label="Boira short story">Boira</a></li>
+                <li><a href="/relatosCortos/elSecretoDeLaSeuVella.html" tabindex="0" aria-label="El Secreto de la Seu Vella short story">El Secreto de la Seu Vella</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Link to the new JavaScript file for this page -->
+    <script src="/js/relatosCortos.js"></script>
+</body>
+</html>

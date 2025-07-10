@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Theme will be controlled by body class -->
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PPDM0VRQJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0PPDM0VRQJ');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✏️ Rebecca Raider</title>
+    <!-- This line links to your external CSS file. -->
+    <link rel="stylesheet" href="/styles/index.css">
+    <!-- Boxicons for menu icon -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <input type="checkbox" id="check">
+        <label for="check" class="icons" aria-label="Toggle Navigation" aria-controls="navbar" aria-expanded="false">
+            <i class="bx bx-food-menu bx-tada" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <a href="internalLinks/relatoscortos.html" style="--i:0;">Relatos Cortos</a>
+            <a href="internalLinks/recomendaciones.html" style="--i:2;">Recomendaciones</a>
+            <a href="internalLinks/espacioLibre.html" style="--i:3;">Espacio Libre</a>
+            <a href="internalLinks/biografia.html" style="--i:4;">Biografia</a>
+            <a href="internalLinks/Contactame.html" style="--i:5;">Contactame</a>
+            <!-- Dark Mode Toggle Button with Emoji icons -->
+            <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                <!-- Smiling Moon Emoji (for light mode, user sees moon to switch to dark) -->
+                <span id="moonIcon" class="theme-emoji">🌞</span>
+                <!-- Smiling Sun Emoji (for dark mode, user sees sun to switch to light) -->
+                <span id="sunIcon" class="theme-emoji hidden">🌜</span>
+            </button>
+        </nav>
+    </header>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="/summer.mp4" type="video/mp4">
+        <source src="/summer.webm" type="video/webm">
+        <source src="/summer.ogg" type="video/ogg">
+    </video>
+
+    <div class="hero-card">
+        <div class="hero-text">
+            <h1>Rebecca Raider</h1>
+        </div>
+        <div class="welcome-message">
+            <h1>Bienvenido a mi web!</h1>
+            <h1>Estas son mis historias</h1>
+        </div>
+    </div>
+
+    <!-- This line links to your external JavaScript file. -->
+    <script src="index.js"></script>
+
+    <!-- Placeholder for bottom-container to make scroll logic work. Adjust height as needed. -->
+    <div class="bottom-container" style="height: 1500px; background-color: transparent;"></div>
+</body>
+</html>
