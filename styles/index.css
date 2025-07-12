@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Dancing+Script:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap'); /* Added missing font import */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
 
 /* CSS Variables for easy color customization (Light Theme Defaults) */
 :root {
@@ -9,7 +9,7 @@
     --hover-color: rgb(204, 186, 21); /* Hover color */
 
     /* New Theme Variables - Light Mode */
-    --bg-color: #f0f0f0; /* Light background */
+    /* Removed --bg-color here to allow video to show through */
     --text-color: #333333; /* Dark text */
     --header-bg: rgba(255, 255, 255, 0.1); /* Light header background */
     --header-backdrop-filter: blur(50px);
@@ -26,7 +26,7 @@
 
 /* Dark Theme Variables - Applied when body has 'dark' class */
 body.dark {
-    --bg-color: #1a1a2e; /* Dark blue background */
+    /* Removed --bg-color here to allow video to show through */
     --text-color: #e0e0e0; /* Light text */
     --header-bg: rgba(26, 26, 46, 0.5); /* Darker header background */
     --header-backdrop-filter: blur(15px);
@@ -52,7 +52,7 @@ body.dark {
 html, body {
     min-height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    background-color: var(--bg-color); /* Apply theme background */
+    /* background-color: var(--bg-color); <-- This line is removed/commented out to make the video visible */
     color: var(--text-color); /* Apply theme text color */
 }
 
