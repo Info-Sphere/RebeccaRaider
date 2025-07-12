@@ -3,10 +3,10 @@
 
 /* CSS Variables for easy color customization (Light Theme Defaults) */
 :root {
-    --primary-color: #1871c5; /* Gold color for the hover effect */
+    --primary-color: #0aaa0a; /* Gold color for the hover effect */
     --navbar-bg-color: rgba(0, 0, 0, 0.1); /* Background color of navbar */
     --navbar-link-color: #161515; /* Default color for navbar links */
-    --hover-color: rgba(168, 154, 29, 1); /* Hover color */
+    --hover-color: rgb(204, 186, 21); /* Hover color */
 
     /* New Theme Variables - Light Mode */
     --bg-color: #f0f0f0; /* Light background */
